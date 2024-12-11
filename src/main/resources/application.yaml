@@ -1,0 +1,36 @@
+spring:
+  application:
+    name: config-server
+  profiles:
+    active: native
+  jmx:
+    enabled: true
+    unique-names: false
+  boot:
+    admin:
+      client:
+        url: http://localhost:9090
+
+  cloud:
+    config:
+      server:
+        native:
+          search-locations: classpath:/configs, classpath:/configs/{application}, /app/configs, /app/configs/{application}
+          add-label-locations: false
+
+management:
+  endpoints:
+    jmx:
+      exposure:
+        include: "*"
+    web:
+      exposure:
+        include: "*"
+  endpoint:
+    health:
+      show-details: always
+      probes:
+        enabled: true
+
+server:
+  port: 9091
