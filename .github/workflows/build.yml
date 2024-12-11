@@ -43,7 +43,7 @@ jobs:
         platforms: linux/amd64,linux/arm64
         push: true
         tags: |
-          ishaman/spring-admin:latest
+          ishaman/config-server:latest
     - name: Create release draft
       uses: release-drafter/release-drafter@v6
       env:
